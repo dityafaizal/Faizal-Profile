@@ -63,7 +63,10 @@ export default async() => {
           content: "Faizal's Blog"
         }
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      // script: [{window.__VUE_DEVTOOLS_PORT__: "8098", window.__VUE_DEVTOOLS_HOST__: "192.168.2.189"}],
+      // script: [{src:"http://192.168.2.189:8098"}]
+      script: [{src:"http://localhost:8098"}]
     },
 
     /*
@@ -87,7 +90,10 @@ export default async() => {
         "/blog": "blog/*.md"
       })
     },
-
+    server: {
+      port: 3000, // default: 3000
+      host: '192.168.2.189', // default: localhost
+    },
     /*
     ** Build configuration
     ** Doc: https://nuxtjs.org/api/configuration-build

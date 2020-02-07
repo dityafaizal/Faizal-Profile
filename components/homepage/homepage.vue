@@ -25,8 +25,11 @@
     <!-- FOR MOBILE -->
     <div class="homepage__box--phone" v-if="Showing">
       <div class="homepage__box--top">
-        <div class="homepage__profpic">
+        <div class="homepage__profpic" v-if="whichPic == 'no-webp'">
           <img src="~/assets/images/AfterlightImage3.jpg" alt="">
+        </div>
+        <div class="homepage__profpic" v-if="whichPic == 'webp'">
+          <img src="~/assets/images/AfterlightImage3.webp" alt="">
         </div>
         <div class="homepage__name">
           <h2>Faizal Ditya</h2>
