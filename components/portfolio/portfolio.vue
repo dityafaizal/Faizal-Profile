@@ -3,7 +3,7 @@
     <div class="portfolio__title">
       <h1>Latest Work</h1>
     </div>
-    <div class="portfolio__list" v-if="whichBrowser=='isSafari'">
+    <div class="portfolio__list" v-if="whichBrowser=='isSafari' || whichBrowser=='isiOS'">
       <div class="portfolio__card" >
         <img src="~/assets/images/ss_live.png" />
         <div class="image">
@@ -84,7 +84,9 @@
 
 <script>
 export default {
-  props: ['whichBrowser']
+  props: [
+    'whichBrowser'
+  ]
 }
 </script>
 

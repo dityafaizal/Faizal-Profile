@@ -2,8 +2,11 @@
   <div :class="whichPic" class="homepage">
     <!-- FOR DESKTOP -->
     <div class="homepage__box" v-if="!Showing">
-      <div class="homepage__profpic">
+      <div class="homepage__profpic" v-if="whichPic == 'no-webp'">
         <img src="~/assets/images/AfterlightImage3.jpg" alt="">
+      </div>
+      <div class="homepage__profpic" v-if="whichPic == 'webp'">
+        <img src="~/assets/images/AfterlightImage3.webp" alt="">
       </div>
       <div class="homepage__name">
         <h1>Faizal Ditya</h1>
@@ -59,7 +62,7 @@ export default {
     whichPic() {
       const browser = this.whichBrowser
 
-      if (browser == "isSafari") {
+      if (browser == "isSafari" || browser == "isiOS") {
         return "no-webp"
       } else {
         return "webp"

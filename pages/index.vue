@@ -64,6 +64,7 @@ export default {
     return {
       prefix: 'blog',
       whichBrowser: null,
+      whichMobileOS: null,
       windowWidth:0,
 			windowHeigt:0,
       Showing: false
@@ -90,6 +91,7 @@ export default {
       }
     },
     getBrowser() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
       let browserIs = null
       // Opera 8.0+
       let isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
@@ -126,8 +128,42 @@ export default {
         browserIs = 'isChrome'
       }
 
+      // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+          browserIs = 'isWindows'
+      }
+
+      if (/android/i.test(userAgent)) {
+          browserIs = 'isAndroid'
+      }
+
+      // iOS detection from: http://stackoverflow.com/a/9039885/177710
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          browserIs = 'isiOS'
+      }
+
       this.whichBrowser = browserIs
     },
+    // getMobileOS() {
+    //   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    //   let whichOS = null
+    //
+    //   // Windows Phone must come first because its UA also contains "Android"
+    //   if (/windows phone/i.test(userAgent)) {
+    //       whichOS = 'isWindows'
+    //   }
+    //
+    //   if (/android/i.test(userAgent)) {
+    //       whichOS = 'isAndroid'
+    //   }
+    //
+    //   // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    //   if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    //       whichOS = 'isiOS'
+    //   }
+    //
+    //   this.whichMobileOS = whichOS
+    // },
     getWindowWidth(event){
 			this.windowWidth = document.documentElement.clientWidth;
 
