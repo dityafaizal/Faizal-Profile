@@ -1,7 +1,7 @@
 <template>
   <div class="bio">
     <div class="bio__title">
-      <h1>Short Bio</h1>
+      <h2>Short Bio</h2>
     </div>
     <div class="bio__content">
       <p>
@@ -28,7 +28,7 @@ export default {
     flex-direction: column;
 
     &__title {
-      width: 65%;
+      width: 75%;
 
       @include for-size(phone-only) {
         width: 90%;
@@ -38,7 +38,7 @@ export default {
       }
     }
     &__content {
-      width: 65%;
+      width: 75%;
       margin: 15px 0 0;
 
       @include for-size(phone-only) {

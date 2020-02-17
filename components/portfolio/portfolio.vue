@@ -1,25 +1,13 @@
 <template>
   <div class="portfolio">
     <div class="portfolio__title">
-      <h1>Latest Work</h1>
+      <h2>Latest Work</h2>
     </div>
     <div class="portfolio__list" v-if="whichBrowser=='isSafari' || whichBrowser=='isiOS'">
       <div class="portfolio__card" >
-        <img src="~/assets/images/ss_live.png" />
+        <img src="~/assets/images/livev1b2c.png" />
         <div class="image">
-          <img src="~/assets/images/ss_live.png" />
-        </div>
-        <figcaption>
-          <h4>DynEd Live</h4>
-          <p>B2B english online learning web app</p>
-        </figcaption>
-        <span class="read-more">Visit <i class="ion-android-arrow-forward"></i></span>
-        <a href="https://live.dyned.com/" target="_blank"></a>
-      </div>
-      <div class="portfolio__card" >
-        <img src="~/assets/images/ss_live2.png" />
-        <div class="image">
-          <img src="~/assets/images/ss_live2.png" />
+          <img src="~/assets/images/livev1b2c.png" />
         </div>
         <figcaption>
           <h4>myneo space</h4>
@@ -29,9 +17,9 @@
         <a href="https://live.myneo.space/" target="_blank"></a>
       </div>
       <div class="portfolio__card" >
-        <img src="~/assets/images/ss_live3.png" />
+        <img src="~/assets/images/nexgenenglishonline.png" />
         <div class="image">
-          <img src="~/assets/images/ss_live3.png" />
+          <img src="~/assets/images/nexgenenglishonline.png" />
         </div>
         <figcaption>
           <h4>nexgen english online</h4>
@@ -43,21 +31,9 @@
     </div>
     <div class="portfolio__list" v-else>
       <div class="portfolio__card" >
-        <img src="~/assets/images/ss_live.webp" />
+        <img src="~/assets/images/livev1b2c.webp" />
         <div class="image">
-          <img src="~/assets/images/ss_live.webp" />
-        </div>
-        <figcaption>
-          <h4>DynEd Live</h4>
-          <p>B2B english online learning web app</p>
-        </figcaption>
-        <span class="read-more">Visit <i class="ion-android-arrow-forward"></i></span>
-        <a href="https://live.dyned.com/" target="_blank"></a>
-      </div>
-      <div class="portfolio__card" >
-        <img src="~/assets/images/ss_live2.webp" />
-        <div class="image">
-          <img src="~/assets/images/ss_live2.webp" />
+          <img src="~/assets/images/livev1b2c.webp" />
         </div>
         <figcaption>
           <h4>myneo space</h4>
@@ -67,9 +43,9 @@
         <a href="https://live.myneo.space/" target="_blank"></a>
       </div>
       <div class="portfolio__card" >
-        <img src="~/assets/images/ss_live3.webp" />
+        <img src="~/assets/images/nexgenenglishonline.webp" />
         <div class="image">
-          <img src="~/assets/images/ss_live3.webp" />
+          <img src="~/assets/images/nexgenenglishonline.webp" />
         </div>
         <figcaption>
           <h4>nexgen english online</h4>
@@ -92,8 +68,7 @@ export default {
 
 <style lang="scss">
   .portfolio {
-    margin: 30px 20px;
-    height: 60%;
+    margin: 50px 20px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +82,7 @@ export default {
     }
 
     &__title {
-      width: 65%;
+      width: 75%;
       text-align: left;
 
       @include for-size(phone-only) {
@@ -118,9 +93,10 @@ export default {
       }
     }
     &__list {
-      width: 65%;
-      margin: 30px 0 0;
+      width: 75%;
+      margin: 15px 0 0;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
 
       @include for-size(phone-only) {
@@ -136,13 +112,15 @@ export default {
   }
   @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
   .portfolio__card {
-    width: 30%;
+    width: 100%;
+    margin: 10px 0;
     position: relative;
     overflow: hidden;
     background: #fafafa;
     text-align: left;
     color: #ffffff;
     font-size: 16px;
+    border-radius: 2px;
 
     @include for-size(phone-only) {
       width: 100%;
@@ -159,12 +137,12 @@ export default {
   .portfolio__card .image img {
     // transform: scale(1.05);
     max-width: 100%;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
   }
   .portfolio__card > img {
     vertical-align: top;
     position: relative;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
     opacity: 0.6;
   }
   .portfolio__card figcaption,
@@ -175,7 +153,7 @@ export default {
   .portfolio__card .image {
     position: absolute;
     top: 0;
-    bottom: 25%;
+    bottom: 0;
     right: 0;
     left: 0;
     overflow: hidden;
@@ -187,7 +165,7 @@ export default {
   }
   .portfolio__card figcaption {
     position: absolute;
-    top: 65%;
+    top: 100%;
     bottom: 46px;
     left: 20px;
     right: 20px;
@@ -250,17 +228,17 @@ export default {
   }
   .portfolio__card:hover figcaption,
   .portfolio__card.hover figcaption {
-    top: 15%;
+    top: 80%;
   }
   .portfolio__card:hover .image,
   .portfolio__card.hover .image {
-    bottom: 100%;
+    bottom: 20%;
   }
   .portfolio__card:hover .image img {
     filter: none;
   }
   .portfolio__card:hover > img {
-    filter: blur(5px);
+    // filter: blur(5px);
   }
   .portfolio__card:hover p,
   .portfolio__card.hover p {
