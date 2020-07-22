@@ -92,7 +92,7 @@ export default async() => {
     },
     server: {
       port: 3000, // default: 3000
-      host: '192.168.2.189', // default: localhost
+      host: '192.168.1.2', // default: localhost
     },
     /*
     ** Build configuration

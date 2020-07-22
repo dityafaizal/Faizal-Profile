@@ -6,8 +6,8 @@
     <div class="bio__content">
       <p>
         Experienced Frontend Web Engineer with a demonstrated history of working in the computer software industry,
-        I also like to take photograph and image manipulation.
-        <br> Skilled in VueJS, SASS (CSS Pre-processor), Webpack, Github, Photoshop, and Lightroom.
+        I also do UI/UX design and image manipulation.
+        <br> Skilled in <b>VueJS, SCSS, Webpack, Github, Photoshop, and Figma.</b>
       </p>
     </div>
   </div>

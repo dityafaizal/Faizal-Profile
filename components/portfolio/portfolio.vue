@@ -3,49 +3,23 @@
     <div class="portfolio__title">
       <h2>Latest Work</h2>
     </div>
-    <div class="portfolio__list" v-if="whichBrowser=='isSafari' || whichBrowser=='isiOS'">
-      <div class="portfolio__card" >
-        <img src="~/assets/images/livev1b2c.png" />
+    <div class="portfolio__list">
+      <div class="portfolio__card" v-for="(data, i) in portfolio" :key="i">
+        <img rel="prefetch" :src="require(`@/assets/images/${data.image}`)" />
         <div class="image">
-          <img src="~/assets/images/livev1b2c.png" />
+          <img rel="prefetch" :src="require(`@/assets/images/${data.image}`)" />
         </div>
         <figcaption>
-          <h4>myneo space</h4>
-          <p>B2C english online learning web app</p>
+          <h4>{{data.title}}</h4>
+          <p>{{data.caption}}</p>
         </figcaption>
         <span class="read-more">Visit <i class="ion-android-arrow-forward"></i></span>
-        <a href="https://live.myneo.space/" target="_blank"></a>
+        <a :href="data.url" target="_blank"></a>
       </div>
-      <div class="portfolio__card" >
-        <img src="~/assets/images/nexgenenglishonline.png" />
+      <!-- <div class="portfolio__card" >
+        <img rel="prefetch" src="~/assets/images/nexgenenglishonline.png" />
         <div class="image">
-          <img src="~/assets/images/nexgenenglishonline.png" />
-        </div>
-        <figcaption>
-          <h4>nexgen english online</h4>
-          <p>A corporate website</p>
-        </figcaption>
-        <span class="read-more">Visit <i class="ion-android-arrow-forward"></i></span>
-        <a href="https://nexgenenglishonline.co/" target="_blank"></a>
-      </div>
-    </div>
-    <div class="portfolio__list" v-else>
-      <div class="portfolio__card" >
-        <img src="~/assets/images/livev1b2c.webp" />
-        <div class="image">
-          <img src="~/assets/images/livev1b2c.webp" />
-        </div>
-        <figcaption>
-          <h4>myneo space</h4>
-          <p>B2C english online learning web app</p>
-        </figcaption>
-        <span class="read-more">Visit <i class="ion-android-arrow-forward"></i></span>
-        <a href="https://live.myneo.space/" target="_blank"></a>
-      </div>
-      <div class="portfolio__card" >
-        <img src="~/assets/images/nexgenenglishonline.webp" />
-        <div class="image">
-          <img src="~/assets/images/nexgenenglishonline.webp" />
+          <img rel="prefetch" src="~/assets/images/nexgenenglishonline.png" />
         </div>
         <figcaption>
           <h4>nexgen english online</h4>
@@ -54,6 +28,18 @@
         <span class="read-more">Visit <i class="ion-android-arrow-forward"></i></span>
         <a href="https://nexgenenglishonline.co/" target="_blank"></a>
       </div>
+      <div class="portfolio__card" >
+        <img rel="prefetch" src="~/assets/images/infinite-web-desc.png" />
+        <div class="image">
+          <img rel="prefetch" src="~/assets/images/infinite-web-desc.png" />
+        </div>
+        <figcaption>
+          <h4>Infinite Co-Working Place</h4>
+          <p>A co-working place website design</p>
+        </figcaption>
+        <span class="read-more">Visit <i class="ion-android-arrow-forward"></i></span>
+        <a href="#"></a>
+      </div> -->
     </div>
   </div>
 </template>
@@ -62,7 +48,16 @@
 export default {
   props: [
     'whichBrowser'
-  ]
+  ],
+  data() {
+    return {
+      portfolio: [
+        {"image": "infinite-web-desc.png", "title": "Infinite Co-Working Place", "caption": "A co-working place website design", "url": "#"},
+        {"image": "nexgenenglishonline.png", "title": "nexgen english online", "caption": "A corporate website", "url": "https://nexgenenglishonline.co/"},
+        {"image": "livev1b2c.png", "title": "myneo space", "caption": "B2C english online learning web app", "url": "https://live.myneo.space/"}
+      ]
+    }
+  }
 }
 </script>
 
